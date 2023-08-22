@@ -1,0 +1,9 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Bookmarkeds</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper-content">
+  <app-repository-card *ngFor="let repository of bookmarkedRepository | async" [repository]="repository"></app-repository-card>
+</div>

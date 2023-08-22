@@ -1,0 +1,17 @@
+
+<mat-toolbar class="header">
+  <mat-toolbar-row>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon aria-hidden="false" aria-label="Example thumbs up SVG icon">home</mat-icon>
+    </button>
+    <span>
+      <span>Wiremind coding</span></span>
+    <span class="header-spacer"></span>
+    <button routerLink="search" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button routerLink="bookmarked" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon [matBadge]="(bookmarkedCount$ | async)">star</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

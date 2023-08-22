@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Search repository</span>
+    <span class="header-spacer"></span>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Tape something here..." [formControl]="searchText" >
+      </mat-form-field>
+      <button mat-button (click)="onSearch()">Valider</button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper-content">
+  <ng-container *ngIf="repositoryData as data">
+    <mat-paginator [length]="repositoryData.total_count"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   [pageIndex]="pageIndex"
+                   aria-label="Select page"
+                   (page)="onChangePage($event)">
+    </mat-paginator>
+    <app-repository-card *ngFor="let repository of data.items" [repository]="repository"></app-repository-card>
+  </ng-container>
+</div>

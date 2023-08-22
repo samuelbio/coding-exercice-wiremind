@@ -1,0 +1,39 @@
+<mat-card class="card">
+  <mat-card-header>
+    <span mat-card-avatar class="avatar">
+      <img [src]="repository.owner.avatar_url">
+    </span>
+    <mat-card-title>
+      <a (click)="viewDetails(repository)">{{repository.full_name}}</a>
+    </mat-card-title>
+    <mat-card-subtitle>{{repository.description | slice:0:100}}</mat-card-subtitle>
+  </mat-card-header>
+   <mat-card-content>
+     <mat-chip-set
+       class="example-chip"
+       cdkDropList
+       cdkDropListOrientation="horizontal">
+       <mat-chip
+         class="example-box"
+         cdkDrag
+         *ngFor="let topic of repository.topics">
+         {{topic}}
+       </mat-chip>
+     </mat-chip-set>
+  </mat-card-content>
+  <mat-card-actions end>
+    <div class="card-footer">
+      <div class="footer-right">
+        <span>{{repository.language}}</span>
+        <span>
+          {{repository.stargazers_count}}
+        </span>
+        <span>Updated on {{repository.updated_at | amTimeAgo}}</span>
+      </div>
+      <button (click)="onBoomarked(repository)" mat-stroked-button>
+        <mat-icon>star</mat-icon>
+        Star
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

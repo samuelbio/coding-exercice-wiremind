@@ -1,0 +1,31 @@
+.card {
+  margin-bottom: 1.5em;
+  .avatar {
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+    img {
+      height: 100%;
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+  }
+  mat-card-title a {
+    cursor: pointer;
+  }
+  &-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1em;
+    }
+  }
+}

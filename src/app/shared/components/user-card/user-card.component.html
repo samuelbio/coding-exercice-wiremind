@@ -1,0 +1,20 @@
+<mat-card class="card">
+  <mat-card-header>
+    <span mat-card-avatar class="avatar">
+      <img [src]="user?.avatar_url">
+    </span>
+    <mat-card-subtitle>{{user?.login}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+  </mat-card-content>
+
+  <mat-card-actions end>
+    <div class="card-footer">
+      <div class="footer-right">
+        <span>
+            {{user?.contributions}}
+          </span>
+      </div>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,10 @@
+<ng-container *ngIf="(commiters$ | async) as commitersData">
+  <mat-paginator [length]="commitersData?.total_count"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 [pageIndex]="0"
+                 aria-label="Select page"
+                 (page)="onChangePage($event)">
+  </mat-paginator>
+  <app-user-card *ngFor="let commiter of commitersData.items" [user]="commiter!"></app-user-card>
+</ng-container>
